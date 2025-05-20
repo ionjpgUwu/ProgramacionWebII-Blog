@@ -1,0 +1,17 @@
+{% for comentario in comentarios %}
+<li>
+    usuario: {{comentario.usuario.username}}
+    comentario: {{comentario.contenido}}<br>
+    fecha: {{comentario.fecha_creacion}}
+    <p></p>
+        {% if user== comentario.usuario%}
+    <p>
+        <a href="{% url 'editar_comentario' comentario.pk %}">Editar</a>
+    </p>
+    {% endif %}    
+
+</li>
+{% endfor %}
+
+{% if user.is_authenticated %}
+<h3>Agregar un comentario</h3>

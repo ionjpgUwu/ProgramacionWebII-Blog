@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+<h1>Lista de publicaciones</h1>
+
+    <ul>
+    {% for publicacion in publicaciones %}
+        <li> Titulo: {{ publicacion.titulo}} <a href = " {% url 'detalle_publicacion' publicacion.pk %}"> detalle </a><br>
+             Contenido: {{publicacion.contenido}}<br>
+        </li> 
+        <p></p>  
+    {% endfor %}
+    </ul>    
+
+{% endblock  %}
